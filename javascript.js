@@ -56,9 +56,27 @@ function game() {
   console.log("Let's play a game...");
   playerScore = 0;
   compScore = 0; 
+  /*
   for (let i = 0; i < 5; i++) {
     console.log(playRound(prompt("Rock...Paper...Scissors..."), getComputerChoice()));
   }
+  */
+
+  const rock = document.querySelector('#rock');
+  rock.addEventListener('click', () => {
+    console.log(playRound('rock', getComputerChoice()));
+  });
+
+  const paper = document.querySelector('#paper');
+  paper.addEventListener('click', () => {
+    console.log(playRound('paper', getComputerChoice()));
+  });
+
+  const scissors = document.querySelector('#scissors');
+  scissors.addEventListener('click', () => {
+    console.log(playRound('scissors', getComputerChoice()));
+  });
+
   if (playerScore > compScore) {
     alert("You are the winner!");
   } else if (playerScore === compScore) {
