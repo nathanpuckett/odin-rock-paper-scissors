@@ -66,36 +66,46 @@ function game() {
   results.textContent = "Let's play a game...";
   playerScore = 0;
   compScore = 0; 
-  /*
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound(prompt("Rock...Paper...Scissors..."), getComputerChoice()));
-  }
-  */
+  score.textContent = `You: ${playerScore} Computer: ${compScore}`;
 
   const rock = document.querySelector('#rock');
+  const paper = document.querySelector('#paper');
+  const scissors = document.querySelector('#scissors');
+
   rock.addEventListener('click', () => {
     console.log(playRound('rock', getComputerChoice()));
+    score.textContent = `You: ${playerScore} Computer: ${compScore}`;
+    if (playerScore === 5) {
+      alert(`You are the winner! Refresh the page to play again.`);
+    } else if (compScore === 5) {
+      alert(`You are the loser! Refresh the page to play again.`);
+    };
   });
-
-  const paper = document.querySelector('#paper');
+  
+  
   paper.addEventListener('click', () => {
     console.log(playRound('paper', getComputerChoice()));
+    score.textContent = `You: ${playerScore} Computer: ${compScore}`;
+    if (playerScore === 5) {
+      alert(`You are the winner! Refresh the page to play again.`);
+    } else if (compScore === 5) {
+      alert(`You are the loser! Refresh the page to play again.`);
+    };
   });
-
-  const scissors = document.querySelector('#scissors');
+  
   scissors.addEventListener('click', () => {
     console.log(playRound('scissors', getComputerChoice()));
+    score.textContent = `You: ${playerScore} Computer: ${compScore}`;
+    if (playerScore === 5) {
+      alert(`You are the winner! Refresh the page to play again.`);
+    } else if (compScore === 5) {
+      alert(`You are the loser! Refresh the page to play again.`);
+    };
   });
 
-  if (playerScore > compScore) {
-    alert("You are the winner!");
-  } else if (playerScore === compScore) {
-    alert("You are tied!");
-  } else if (playerScore < compScore) {
-    alert("You are the loser!");
-  }
-}
+};
 
 const results = document.querySelector('#results');
+const score = document.querySelector('#score');
 
 game();
